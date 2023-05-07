@@ -1,0 +1,8 @@
+<div class="search-bar">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Search</mat-label>
+    <input type="text" [(ngModel)]="enteredSeachValue" (input)="onSearchTextChanged()" matInput
+      placeholder="Search with keywords Hero or Villian" />
+    <mat-icon matSuffix><span class="material-icons"> search </span></mat-icon>
+  </mat-form-field>
+</div>

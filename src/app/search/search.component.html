@@ -1,0 +1,37 @@
+<div>
+  <app-search2 (seacrhTextChanged)="onSearchTextEntered($event)"></app-search2>
+</div>
+
+<div class="grid-container" *ngIf="searchText === 'hero'">
+  <div class="grid-item card" *ngFor="let hero of heroes" (click)="gotoDetailHero(hero)">
+    <img src="{{ hero.images.sm }}" alt="{{ hero.name }}" />
+    <p>{{ hero.name }}</p>
+    <div class="button-section">
+      <a [routerLink]="['/hero', hero.id]"></a>
+      <button class="button-item" mat-raised-button routerLink="/detail/{{ hero.name }}">
+        Details
+      </button>
+      <button class="button-item" mat-raised-button routerLink="/favorites" color="warn"
+        (click)="addToFavoritesHero(hero)">
+        Favorite
+      </button>
+    </div>
+  </div>
+</div>
+<div class="grid-container" *ngIf="searchText === 'villian'">
+  <div class="grid-item card" *ngFor="let villian of villians" (click)="gotoDetailVillian(villian)">
+    <img src="{{ villian.images.sm }}" alt="{{ villian.name }}" />
+    <p>{{ villian.name }}</p>
+    <div class="button-section">
+      <button class="button-item" mat-raised-button routerLink="/detail/{{ villian.name }}">
+        Details
+      </button>
+      <button class="button-item" mat-raised-button routerLink="/favorites" color="warn"
+        (click)="addToFavoritesVillian(villian)">
+        Favorite
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-hero-villian-detail></app-hero-villian-detail>

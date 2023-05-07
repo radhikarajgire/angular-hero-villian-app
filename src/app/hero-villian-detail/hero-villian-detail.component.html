@@ -1,0 +1,12 @@
+<div *ngIf="hero">
+  <h1>Details</h1>
+  <div class="card">
+    <div class="hero-detail-container">
+      <div class="details"><span>Name: </span>{{ hero.name }}</div>
+      <img src="{{ hero.images.sm }}" alt="{{ hero.id }}" />
+      <p>{{ hero.appearance.height }}</p>
+      <p>{{ hero.appearance.weight }}</p>
+      <p>{{ hero.appearance.gender }}</p>
+    </div>
+  </div>
+</div>

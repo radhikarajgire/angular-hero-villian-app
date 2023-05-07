@@ -1,0 +1,6 @@
+<div class="grid-container">
+  <div class="grid-item card" *ngFor="let favorite of favorites">
+    <img src="{{ favorite.images.sm}}" alt="{{ favorite.name }}">
+    <p>{{favorite.name }}</p>
+  </div>
+</div>
