@@ -4,9 +4,10 @@ import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Hero } from '../models/hero.model';
 import { headers, heroUrl, baseUrl } from '../config/api';
+import { Subject } from 'rxjs'
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class HeroService {
   constructor(private http: HttpClient) {}

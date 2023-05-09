@@ -6,10 +6,15 @@ import { villianUrl, headers } from '../config/api';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
+
+
 export class VillianService {
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient) {
+    
+  }
   getVillians(): Observable<Villian[]> {
     return this.http.get<Villian[]>(villianUrl, { headers: headers }).pipe(
       map((data) => data),

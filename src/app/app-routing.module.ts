@@ -4,17 +4,23 @@ import { HeroVillianDetailComponent } from './hero-villian-detail/hero-villian-d
 import { SearchComponent } from './search/search.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+
 const routes: Routes = [
-  // { path: '', redirectTo: '/search', pathMatch: 'full' },
+  { path: '', redirectTo: '/search', pathMatch: 'full' },
   { path: 'search', component: SearchComponent },
   { path: 'detail/:id', component: HeroVillianDetailComponent },
   { path: 'favorites', component: FavoritesComponent },
   { path: '**', component: PageNotFoundComponent }
-   
- ];
+]
+
+
 @NgModule({
-  imports: [ RouterModule.forRoot(routes,{ enableTracing: true })],
-  exports: [ RouterModule ],
-  
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [RouterModule]
 })
-export class AppRoutingModule { }
+
+
+export class AppRoutingModule {
+  
+}
